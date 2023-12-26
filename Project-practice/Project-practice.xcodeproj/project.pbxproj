@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF284A002B3AF29500715695 /* ScissorsRockPaperGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2849FF2B3AF29500715695 /* ScissorsRockPaperGameViewController.swift */; };
 		AFF0C79F2B2BDF3C005F4307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0C79E2B2BDF3C005F4307 /* AppDelegate.swift */; };
 		AFF0C7A12B2BDF3C005F4307 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0C7A02B2BDF3C005F4307 /* SceneDelegate.swift */; };
 		AFF0C7A32B2BDF3C005F4307 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0C7A22B2BDF3C005F4307 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF2849FF2B3AF29500715695 /* ScissorsRockPaperGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScissorsRockPaperGameViewController.swift; sourceTree = "<group>"; };
 		AFF0C79B2B2BDF3C005F4307 /* Project-practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF0C79E2B2BDF3C005F4307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFF0C7A02B2BDF3C005F4307 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				AFF0C7A02B2BDF3C005F4307 /* SceneDelegate.swift */,
 				AFF0C7A22B2BDF3C005F4307 /* ViewController.swift */,
 				AFF0C7B22B2C1760005F4307 /* SecondAppMainViewController.swift */,
+				AF2849FF2B3AF29500715695 /* ScissorsRockPaperGameViewController.swift */,
 				AFF0C7A72B2BDF3F005F4307 /* Assets.xcassets */,
 				AFF0C7A92B2BDF3F005F4307 /* LaunchScreen.storyboard */,
 				AFF0C7AC2B2BDF3F005F4307 /* Info.plist */,
@@ -141,6 +144,7 @@
 				AFF0C79F2B2BDF3C005F4307 /* AppDelegate.swift in Sources */,
 				AFF0C7A12B2BDF3C005F4307 /* SceneDelegate.swift in Sources */,
 				AFF0C7B32B2C1760005F4307 /* SecondAppMainViewController.swift in Sources */,
+				AF284A002B3AF29500715695 /* ScissorsRockPaperGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

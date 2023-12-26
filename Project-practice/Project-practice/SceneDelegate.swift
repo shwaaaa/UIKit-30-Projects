@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
 //        let mainViewController = ViewController()
-        let mainViewController = SecondAppMainViewController()
+        let mainViewController = ScissorsRockPaperGameViewController()
         
         window?.rootViewController = mainViewController
         window?.makeKeyAndVisible()
