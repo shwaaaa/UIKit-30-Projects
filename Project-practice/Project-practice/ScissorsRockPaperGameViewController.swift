@@ -2,7 +2,13 @@ import UIKit
 
 class ScissorsRockPaperGameViewController: UIViewController {
     
-    let gameImageNameData = ["rock", "scissor", "paper"]
+    let gameImageNameData:[InputState] = [.scissors, .rock, .paper]
+    
+    enum InputState: String {
+        case scissors
+        case rock
+        case paper
+    }
     
     lazy var playStackView: UIStackView = {
         let stackView = UIStackView()
@@ -61,6 +67,27 @@ class ScissorsRockPaperGameViewController: UIViewController {
         return button
     }()
     
+    lazy var gameResultLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "결과는?"
+        return label
+    }()
+    
+    lazy var playerLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "player?"
+        return label
+    }()
+    
+    lazy var computerLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "com?"
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
@@ -73,6 +100,18 @@ class ScissorsRockPaperGameViewController: UIViewController {
         
         playStackView.addArrangedSubview(computerGameImagView)
         playStackView.addArrangedSubview(myGameImagView)
+        
+        view.addSubview(gameResultLabel)
+        gameResultLabel.topAnchor.constraint(equalTo: playStackView.bottomAnchor, constant: 20).isActive = true
+        gameResultLabel.centerXAnchor.constraint(equalTo: playStackView.centerXAnchor).isActive = true
+        
+        view.addSubview(computerLabel)
+        computerLabel.bottomAnchor.constraint(equalTo: playStackView.topAnchor, constant: -20).isActive = true
+        computerLabel.trailingAnchor.constraint(equalTo: playStackView.trailingAnchor, constant: -30).isActive = true
+        
+        view.addSubview(playerLabel)
+        playerLabel.bottomAnchor.constraint(equalTo: playStackView.topAnchor , constant: -20).isActive = true
+        playerLabel.leadingAnchor.constraint(equalTo: playStackView.leadingAnchor, constant: 30).isActive = true
         
         view.addSubview(inputStackView)
         inputStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
@@ -90,21 +129,58 @@ class ScissorsRockPaperGameViewController: UIViewController {
     }
     
     @objc func didTapChangeGameImageButton() {
-        myGameImagView.image = UIImage(named: "scissor")
+        myGameImagView.image = UIImage(named: "scissors")
         let randomInput = gameImageNameData.randomElement()!
-        computerGameImagView.image = UIImage(named: randomInput)
-//        gameImageNameData.randomElement()
+        computerGameImagView.image = UIImage(named: randomInput.rawValue)
+        
+        gameResultLabel.text = fetchGameResult(myInput: .scissors, computerInput: randomInput)
     }
     
     @objc func didTapChangeGameImageButton2() {
         myGameImagView.image = UIImage(named: "rock")
         let randomInput = gameImageNameData.randomElement()!
-        computerGameImagView.image = UIImage(named: randomInput)
+        computerGameImagView.image = UIImage(named: randomInput.rawValue)
+        
+        gameResultLabel.text = fetchGameResult(myInput: .rock, computerInput: randomInput)
     }
     
     @objc func didTapChangeGameImageButton3() {
         myGameImagView.image = UIImage(named: "paper")
         let randomInput = gameImageNameData.randomElement()!
-        computerGameImagView.image = UIImage(named: randomInput)
+        computerGameImagView.image = UIImage(named: randomInput.rawValue)
+        
+        gameResultLabel.text = fetchGameResult(myInput: .paper, computerInput: randomInput)
+    }
+    
+    private func fetchGameResult(myInput: InputState, computerInput: InputState) -> String {
+        switch myInput {
+        case .scissors:
+            switch computerInput {
+            case .scissors:
+                return "무승부"
+            case .rock:
+                return "짐"
+            case .paper:
+                return "이김"
+            }
+        case .rock:
+            switch computerInput {
+            case .scissors:
+                return "이김"
+            case .rock:
+                return "무승부"
+            case .paper:
+                return "짐"
+            }
+        case .paper:
+            switch computerInput {
+            case .scissors:
+                return "짐"
+            case .rock:
+                return "이김"
+            case .paper:
+                return "무승부"
+            }
+        }
     }
 }
